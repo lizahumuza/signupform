@@ -60,13 +60,13 @@
                             <div>
                                 <ul>
                                     <li><label for="password">PASSWORD</label></li>
-                                    <li><input class="error" type="password" name="pwd" id="password" required></li>
+                                    <li><input class="error" type="password" name="pwd" id="pass" required></li>
                                 </ul>   
                             </div>
                             <div>
                                 <ul>
                                     <li><label for="cpassword">CONFIRM PASSWORD</label></li>
-                                    <li><input class="error" type="password" name="cpwd" id="cpassword" required></li>
+                                    <li><input class="error" type="password" name="cpwd" id="cpass" required></li>
                                 </ul> 
                                 <p id="error"></p>   
                             </div>    
@@ -87,15 +87,40 @@
            
         </div>
     </div>
-    <!--<script>
-        <!const form= document.getElementById("form");
-        const error=document.getElementById('error');
-        form.addEventListener('submit',logSubmit);
-        function logSubmit(e){
-            let x=
-            error.textContent="passwords do not match";
-            let 
-        }>
-    </script>-->
+   
 </body>
+<script>
+      
+    /*function confirmPassword(){
+        const form= document.getElementById('form')
+        let error=document.getElementById('error');
+        let password= document.getElementById('pass').value;
+        let confirmPass = document.getElementById('cpass').value;
+       if (password ===""){
+            error.textContent="No empty field allowed";
+        } else if (password===confirmPass){
+            error.textContent="logged in";
+        } else {
+            error.textContent="passwords do not match";
+        }
+       
+    }*/
+    let form = document.getElementById('form')
+    let error=document.getElementById('error');
+    
+    form.addEventListener('submit',confirmPassword);
+    function confirmPassword(e){
+        e.preventDefault();
+        let password= document.getElementById('pass').value;
+        let confirmPass = document.getElementById('cpass').value;
+        if (password ===confirmPass){
+            error.textContent="logged in";
+        }else {
+            error.textContent="passwords do not match";
+        }
+
+
+    }
+
+</script>
 </html>
